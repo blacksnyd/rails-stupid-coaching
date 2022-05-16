@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
     @question = params[:answer]
     if @question == "I am going to work"
       @answer = "Greats"
-    elsif @question == "?"
+    elsif @question.chars.select { |letter| letter != " " }.last == "?"
       @answer = "Silly question, get dressed and go to work!"
     else
       @answer = "I don't care, get dressed and go to work!"
